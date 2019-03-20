@@ -5,24 +5,33 @@
     });
   </script>
 <% end %>
-<h2>Products</h2>
+
+<h2>Orders</h2>
 
 <ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_top" %></li>
+  <% @orders.each do |order| %>
+    <li><%= link_to order.name, "https://#{@shop_session.url}/admin/orders/#{order.id}", target: "_blank" %></li>
   <% end %>
 </ul>
 
 <hr>
 
-<h2>Webhooks</h2>
+<h2>Customers</h2>
 
-<% if @webhooks.present? %>
-  <ul>
-    <% @webhooks.each do |webhook| %>
-      <li><%= webhook.topic %> : <%= webhook.address %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
-<% end %>
+<ul>
+  <% @customers.each do |customer| %>
+    <li><%= link_to customer.email, "https://#{@shop_session.url}/admin/customers/#{customer.id}", target: "_blank" %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<h2>Products</h2>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to product.title, "https://#{@shop_session.url}/admin/products/#{product.id}", target: "_blank" %></li>
+  <% end %>
+</ul>
+
+<hr>
