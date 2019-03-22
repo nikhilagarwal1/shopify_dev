@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Below are the steps to run the project on heroku:-
 
-Things you may want to cover:
+* The heroku app url is https://shopify-dev-test.herokuapp.com/
 
-* Ruby version
+* Name of shop domain to login in heroku app is testing-for-development.myshopify.com
 
-* System dependencies
+* Email is nikhil.agarwal0201@gmail.com
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Password is shopify123

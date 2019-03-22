@@ -29,7 +29,8 @@ class HomeController < ShopifyApp::AuthenticatedController
       total_revenue = ShopifyAPI::Order.where(created_at_min: start_time, created_at_max: end_time).map{|a| a.total_price.to_f }.sum.round
       supplier_cost = (total_revenue * 0.2).round
       marketing_cost = (total_revenue * 0.4).round
-      profit = total_revenue - supplier_cost - marketing_cost
+      profit = (i-1) < Time.now.strftime("%H").to_i ? (total_revenue - supplier_cost - marketing_cost) : ''
+      # profit = total_revenue - supplier_cost - marketing_cost
       profit_datapoints << [end_time.strftime("%H:00"), profit]
     end
     render json: profit_datapoints
